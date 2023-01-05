@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS cinturon;
 
 CREATE TABLE constelacion(
     nombre_constelacion VARCHAR(30),
-    coordenadas VARCHAR(30),
+    cantidad_estrellas INT,
     PRIMARY KEY(nombre_constelacion)
 );
 
@@ -140,10 +140,10 @@ CREATE TABLE cinturon(
                 ON DELETE CASCADE
 );
 
-INSERT INTO constelacion(nombre_constelacion, coordenadas)
+INSERT INTO constelacion(nombre_constelacion, cantidad_estrellas)
 VALUES
-    ('Ofiuco', '-30,21° y 14,39°'),
-    ('Centaurus', '-43° 09″');
+    ('Ofiuco', 6),
+    ('Centaurus', 9);
 
 INSERT INTO estrella(nombre_estrella, nombre_constelacion, tamaño, edad)
 VALUES
