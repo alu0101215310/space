@@ -16,15 +16,15 @@ DROP TABLE IF EXISTS cinturon;
 
 CREATE TABLE constelacion(
     nombre_constelacion VARCHAR(30),
-    cantidad_estrellas INT,
+    cantidad_estrellas BIGINT,
     PRIMARY KEY(nombre_constelacion)
 );
 
 CREATE TABLE estrella(
     nombre_estrella VARCHAR(30),
     nombre_constelacion VARCHAR(30),
-    tamaño INT,
-    edad INT,
+    tamaño BIGINT,
+    edad BIGINT,
     PRIMARY KEY(nombre_estrella),
     CONSTRAINT no_constelacion
         FOREIGN KEY(nombre_constelacion)
@@ -35,7 +35,7 @@ CREATE TABLE estrella(
 CREATE TABLE planeta(
     nombre_planeta VARCHAR(30),
     nombre_estrella VARCHAR(30),
-    tamaño INT,
+    tamaño BIGINT,
     orbita VARCHAR(30),
     PRIMARY KEY(nombre_planeta),
     CONSTRAINT no_estrella
@@ -47,7 +47,7 @@ CREATE TABLE planeta(
 CREATE TABLE satelite(
     nombre_satelite VARCHAR(30),
     nombre_planeta VARCHAR(30),
-    tamaño INT,
+    tamaño BIGINT,
     PRIMARY KEY(nombre_satelite),
     CONSTRAINT no_planeta
         FOREIGN KEY(nombre_planeta)
@@ -58,7 +58,7 @@ CREATE TABLE satelite(
 CREATE TABLE agujero_negro(
     nombre_agujero VARCHAR(30),
     distancia VARCHAR(30),
-    tamaño_horizonte INT,
+    tamaño_horizonte BIGINT,
     PRIMARY KEY(nombre_agujero)
 );
 
@@ -74,6 +74,7 @@ CREATE TABLE galaxia(
 
 CREATE TABLE nebulosa(
     nombre_galaxia VARCHAR(30),
+	tamaño BIGINT,
     CONSTRAINT no_galaxia
         FOREIGN KEY(nombre_galaxia)
             REFERENCES galaxia(nombre_galaxia)
@@ -84,7 +85,7 @@ CREATE TABLE sistema_planetario(
     nombre_sistema VARCHAR(30),
     nombre_estrella VARCHAR(30),
     nombre_galaxia VARCHAR(30),
-    cantidad_planetas INT,
+    cantidad_planetas BIGINT,
     PRIMARY KEY(nombre_sistema),
     CONSTRAINT no_galaxia
         FOREIGN KEY(nombre_galaxia)
@@ -133,7 +134,7 @@ CREATE TABLE cinturon(
     nombre_cinturon VARCHAR(30),
     nombre_estrella VARCHAR(30),
     orbita VARCHAR(30),
-    PRIMARY KEY(nombre_cinturón),
+    PRIMARY KEY(nombre_cinturon),
     CONSTRAINT no_estrella
         FOREIGN KEY(nombre_estrella)
             REFERENCES estrella(nombre_estrella)
@@ -147,26 +148,26 @@ VALUES
 
 INSERT INTO estrella(nombre_estrella, nombre_constelacion, tamaño, edad)
 VALUES
-    ('Sol', 'Ofiuco', 696.340, 4000000603),
-    ('Próxima Centauri', 'Centaurus', 107.280, 4000000653),
-    ('Barnard', 'Ofiuco', 136.360, 10000000001);
+    ('Sol', 'Ofiuco', 696340, 4000000603),
+    ('Proxima Centauri', 'Centaurus', 107280, 4000000653),
+    ('Barnard', 'Ofiuco', 136360, 10000000001);
 
 INSERT INTO planeta(nombre_planeta, nombre_estrella, tamaño, orbita)
 VALUES
-    ('La Tierra', 'Sol', 69.340, 'Circular'),
-    ('Jupiter', 'Sol', 214.40, 'Circular'),
-    ('Proxima D', 'Próxima Centauri', 69.280, 'Elíptica');
+    ('La Tierra', 'Sol', 69340, 'Circular'),
+    ('Jupiter', 'Sol', 21440, 'Circular'),
+    ('Proxima D', 'Proxima Centauri', 69280, 'Elíptica');
 
 INSERT INTO satelite(nombre_satelite, nombre_planeta, tamaño)
 VALUES
-    ('La Luna', 'La Tierra', 9.340),
-    ('Europa', 'Jupiter', 14.40),
-    ('Titán', 'Jupiter', 11.30);
+    ('La Luna', 'La Tierra', 9340),
+    ('Europa', 'Jupiter', 1440),
+    ('Titán', 'Jupiter', 1130);
 
 INSERT INTO agujero_negro(nombre_agujero, distancia, tamaño_horizonte)
 VALUES
-    ('Sagitario A*', '26 mil años luz', 4000000000000),
-    ('S5 0014+81', '22 mil millones de años luz', 100000000000000);
+    ('Sagitario A*', '26 mil años luz', 40000),
+    ('S5 0014+81', '22 mil millones de años luz', 1000000);
 
 INSERT INTO galaxia(nombre_galaxia, nombre_agujero)
 VALUES
@@ -184,7 +185,7 @@ INSERT INTO sistema_planetario(nombre_sistema, nombre_estrella, nombre_galaxia, 
 VALUES
     ('Sistema Solar', 'Sol', 'Via Láctea', 8),
     ('Proxima', 'Proxima Centauri', 'Via Láctea', 3),
-    ('Titawin', 'Bernard', 'Triangulum' , 5);
+    ('Titawin', 'Barnard', 'Triangulum' , 5);
 
 INSERT INTO cinturon(nombre_cinturon, nombre_estrella, orbita)
 VALUES
@@ -193,15 +194,15 @@ VALUES
 
 INSERT INTO asteroide(nombre_asteroide, tamaño)
 VALUES
-    ('Halley', 45000000000),
-    ('Hale-Bop', 59000000000),
-    ('El Chaco', 37000000000),
-    ('Willamete', 15500000000);
+    ('Halley', 45),
+    ('Hale-Bop', 59),
+    ('El Chaco', 37),
+    ('Willamette', 155);
 
 INSERT INTO cometa(nombre_asteroide, nombre_sistema, tamaño_estela)
 VALUES
-    ('Halley', 'Sistema Solar', 1200000),
-    ('Hale-Bop', 'Sistema Solar', 30000000);
+    ('Halley', 'Sistema Solar', 12),
+    ('Hale-Bop', 'Sistema Solar', 30);
 
 INSERT INTO meteorito(nombre_asteroide, nombre_planeta)
 VALUES
