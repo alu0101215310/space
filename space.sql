@@ -143,6 +143,21 @@ CREATE TABLE cinturon(
                 ON DELETE CASCADE
 );
 
+CREATE TABLE meteoritos_tierra (
+    nombre_meteorito VARCHAR(30) ,
+    fecha TIMESTAMP,
+    peligrosidad INT
+    PRIMARY KEY (nombre_meteorito)
+);
+
+CREATE TABLE cometa_detectados (
+    nombre_cometa VARCHAR(30),
+    fecha TIMESTAMP,
+    PRIMARY KEY (nombre_cometa)
+);
+
+
+
 INSERT INTO constelacion(nombre_constelacion, cantidad_estrellas)
 VALUES
     ('Ofiuco', 6),
