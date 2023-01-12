@@ -172,9 +172,9 @@ VALUES
 
 INSERT INTO planeta(nombre_planeta, nombre_estrella, nombre_sistema, tamaño, orbita)
 VALUES
-    ('La Tierra', 'Sol', 'Via Láctea',69340, 'Circular'),
-    ('Jupiter', 'Sol', 'Via Láctea', 21440, 'Circular'),
-    ('Proxima D', 'Proxima Centauri', 'Triangulum', 69280, 'Elíptica');
+    ('La Tierra', 'Sol', 'Sistema Solar',69340, 'Circular'),
+    ('Jupiter', 'Sol', 'Sistema Solar', 21440, 'Circular'),
+    ('Proxima D', 'Proxima Centauri', 'Proxima', 69280, 'Elíptica');
 
 INSERT INTO satelite(nombre_satelite, nombre_planeta, tamaño)
 VALUES
