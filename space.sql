@@ -115,7 +115,7 @@ CREATE TABLE cometa(
     CONSTRAINT no_asteroide
         FOREIGN KEY(nombre_asteroide)
             REFERENCES asteroide(nombre_asteroide)
-                ON DELETE CASCADE,
+                ON DELETE CASCADE
 );
 
 CREATE TABLE meteorito(
@@ -146,7 +146,7 @@ CREATE TABLE cinturon(
 CREATE TABLE meteoritos_tierra (
     nombre_meteorito VARCHAR(30) ,
     fecha TIMESTAMP,
-    peligrosidad INT
+    peligrosidad INT,
     PRIMARY KEY (nombre_meteorito)
 );
 
