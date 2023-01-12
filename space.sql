@@ -107,6 +107,7 @@ CREATE TABLE cometa(
     nombre_asteroide VARCHAR(30),
     nombre_sistema VARCHAR(30),
     tamaño_estela INT,
+    tamaño INT,
     CONSTRAINT no_sistema_planetario
         FOREIGN KEY(nombre_sistema)
             REFERENCES sistema_planetario(nombre_sistema)
@@ -114,12 +115,13 @@ CREATE TABLE cometa(
     CONSTRAINT no_asteroide
         FOREIGN KEY(nombre_asteroide)
             REFERENCES asteroide(nombre_asteroide)
-                ON DELETE CASCADE
+                ON DELETE CASCADE,
 );
 
 CREATE TABLE meteorito(
     nombre_asteroide VARCHAR(30),
     nombre_planeta VARCHAR(30),
+    tamaño INT,
     CONSTRAINT no_planeta
         FOREIGN KEY(nombre_planeta)
             REFERENCES planeta(nombre_planeta)
@@ -199,12 +201,12 @@ VALUES
     ('El Chaco', 37),
     ('Willamette', 155);
 
-INSERT INTO cometa(nombre_asteroide, nombre_sistema, tamaño_estela)
+INSERT INTO cometa(nombre_asteroide, nombre_sistema, tamaño_estela, tamaño)
 VALUES
-    ('Halley', 'Sistema Solar', 12),
-    ('Hale-Bop', 'Sistema Solar', 30);
+    ('Halley', 'Sistema Solar', 12,101),
+    ('Hale-Bop', 'Sistema Solar', 30,32);
 
-INSERT INTO meteorito(nombre_asteroide, nombre_planeta)
+INSERT INTO meteorito(nombre_asteroide, nombre_planeta, tamaño)
 VALUES
-    ('El Chaco', 'La Tierra'),
-    ('Willamette', 'La Tierra');
+    ('El Chaco', 'La Tierra',5),
+    ('Willamette', 'La Tierra', 89);
