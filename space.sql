@@ -170,11 +170,11 @@ VALUES
     ('Proxima Centauri', 'Centaurus', 107280, 4000000653),
     ('Barnard', 'Ofiuco', 136360, 10000000001);
 
-INSERT INTO planeta(nombre_planeta, nombre_estrella, tamaño, orbita)
+INSERT INTO planeta(nombre_planeta, nombre_estrella, nombre_sistema, tamaño, orbita)
 VALUES
-    ('La Tierra', 'Sol', 69340, 'Circular'),
-    ('Jupiter', 'Sol', 21440, 'Circular'),
-    ('Proxima D', 'Proxima Centauri', 69280, 'Elíptica');
+    ('La Tierra', 'Sol', 'Via Láctea',69340, 'Circular'),
+    ('Jupiter', 'Sol', 'Via Láctea', 21440, 'Circular'),
+    ('Proxima D', 'Proxima Centauri', 'Triangulum', 69280, 'Elíptica');
 
 INSERT INTO satelite(nombre_satelite, nombre_planeta, tamaño)
 VALUES
