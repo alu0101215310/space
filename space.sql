@@ -35,6 +35,7 @@ CREATE TABLE estrella(
 CREATE TABLE planeta(
     nombre_planeta VARCHAR(30),
     nombre_estrella VARCHAR(30),
+    nombre_sistema VARCHAR(30),
     tamaño BIGINT,
     orbita VARCHAR(30),
     PRIMARY KEY(nombre_planeta),
