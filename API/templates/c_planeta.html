@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<p style="color: red; font-size: larger;">Para poder insertar un planeta, es necesario tener guardado la estrella que orbita</p>
+<h1>{% block title3 %} Insertar Planeta {% endblock %}</h1>
+<form method="post">
+    <p>
+        <label for="n_planeta">Nombre de planeta</label>
+        <input type="text" name="n_planeta"
+               placeholder="Nombre de planeta">
+        </input>
+    </p>
+
+    <p>
+        <label for="n_estrella">Nombre de estrella</label>
+        <input type="text" name="n_estrella"
+               placeholder="Nombre de estrella">
+        </input>
+    </p>
+
+    <p>
+        <label for="n_sistema">Nombre de sistema</label>
+        <input type="text" name="n_sistema"
+               placeholder="Nombre de sistema">
+        </input>
+    </p>
+
+    <p>
+        <label for="radio_pl">Radio(km)</label>
+        <input type="number" name="radio_pl"
+               placeholder="Radio(km)">
+        </input>
+    </p>
+
+    <p>
+        <label for="tipo_orbita">Tipo de Orbita</label>
+        <input type="text" name="tipo_orbita"
+               placeholder="Tipo de Orbita">
+        </input>
+    </p>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+{% endblock %}

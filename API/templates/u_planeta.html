@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Actualizar planeta {% endblock %}</h1>
+    <form method="post">
+        <p>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre"
+                   placeholder="Nombre del planeta">
+            </input>
+        </p>
+        <p>
+            <label for="orbita">Tipo de órbita</label>
+            <input type="text" name="orbita"
+                   placeholder="Tipo de órbita">
+            </input>
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+{% endblock %}

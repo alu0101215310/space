@@ -1,0 +1,30 @@
+﻿{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Constelaciones {% endblock %}</h1>
+    {% for constelacion in constelaciones %}
+        <div class='constelacion'>
+            <h3>#{{ constelacion[0] }}</h3>
+            <i><p>Numero de estrellas: {{ constelacion[1] }}</p></i>
+        </div>
+    {% endfor %}
+    <h1>{% block title2 %} Estrellas {% endblock %}</h1>
+    {% for estrella in estrellas %}
+        <div class='estrella'>
+            <h3>#{{ estrella[0] }}</h3>
+            <i><p>Constelación: {{ estrella[1] }}</p></i>
+            <i><p>Radio(km): {{ estrella[2] }}</p></i>
+            <i><p>Edad: {{ estrella[3] }}</p></i>
+        </div>
+    {% endfor %}
+    <h1>{% block title3 %} Planetas {% endblock %}</h1>
+    {% for planeta in planetas %}
+        <div class='planeta'>
+            <h3>#{{ planeta[0] }}</h3>
+            <i><p>Estrella que orbita: {{ planeta[1] }}</p></i>
+            <i><p>Radio(km): {{ planeta[2] }}</p></i>
+            <i><p>Tipo de Orbita: {{ planeta[3] }}</p></i>
+        </div>
+    {% endfor %}
+    
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Actualizar estrella {% endblock %}</h1>
+    <form method="post">
+        <p>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre"
+                   placeholder="Nombre de la estrella">
+            </input>
+        </p>
+        <p>
+            <label for="edad">Edad</label>
+            <input type="text" name="edad"
+                   placeholder="Edad de la estrella">
+            </input>
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+{% endblock %}

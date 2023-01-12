@@ -1,0 +1,15 @@
+﻿{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Inserciones {% endblock %}</h1>
+    <p><a href="{{ url_for('c_constelacion') }}">Insertar constelación</a></p>
+    <p><a href="{{ url_for('c_estrella') }}">Insertar estrella</a></p>
+    <p><a href="{{ url_for('c_planeta') }}">Insertar planeta</a></p>
+<h1>{% block title1 %} Extracciones {% endblock %}</h1>
+    <p><a href="{{ url_for('d_constelacion') }}">Eliminar constelación</a></p>
+    <p><a href="{{ url_for('d_estrella') }}">Eliminar estrella</a></p>
+    <p><a href="{{ url_for('d_planeta') }}">Eliminar planeta</a></p>
+<h1>{% block title2 %} Modificaciones {% endblock %}</h1>
+    <p><a href="{{ url_for('u_estrella') }}">Actualizar estrella</a></p>
+    <p><a href="{{ url_for('u_planeta') }}">Actualizar planeta</a></p>
+{% endblock %}

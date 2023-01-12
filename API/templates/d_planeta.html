@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Eliminar planeta {% endblock %}</h1>
+    <form method="post">
+        <p>
+            <label for="n_planeta">Nombre</label>
+            <input type="text" name="n_planeta"
+                   placeholder="Nombre de planeta">
+            </input>
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+{% endblock %}

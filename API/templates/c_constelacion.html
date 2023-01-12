@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{% block title %} Insertar Constelación {% endblock %}</h1>
+<form method="post">
+    <p>
+        <label for="n_cons">Nombre de constelación</label>
+        <input type="text" name="n_cons"
+               placeholder="Nombre de constelación">
+        </input>
+    </p>
+
+    <p>
+        <label for="n_estrellas">Número de estrellas</label>
+        <input type="number" name="n_estrellas"
+               placeholder="Número de estrellas">
+        </input>
+    </p>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</form>
+{% endblock %}
